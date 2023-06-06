@@ -39,11 +39,18 @@ startBtn.addEventListener('click', startCountdown);
 function startCountdown() {
   startBtn.disabled = true;
   const selectedDate = calendar.parseDate(datetimePicker.value);
+  // let countTime = selectedDate.getTime() - Date.now();
 
   timerID = setInterval(() => {
     let countTime = selectedDate.getTime() - Date.now();
 
     updateCountdownValues(countTime);
+
+    if (countTime <= 0) {
+      clearInterval(timerID);
+      updateCountdownValues(0);
+      return;
+    }
   }, INTERVAL);
 }
 
