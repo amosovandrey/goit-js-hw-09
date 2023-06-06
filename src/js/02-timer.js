@@ -13,7 +13,9 @@ const options = {
     console.log(selectedDates[0]);
 
     if (selectedDates[0] < Date.now()) {
-      Notiflix.Notify.warning('Please choose a date in the future');
+      Notiflix.Notify.warning('Please choose a date in the future', {
+        position: 'center-center',
+      });
     } else {
       startBtn.disabled = false;
     }
