@@ -24,6 +24,8 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "eslint": "^8.42.0",
+    "eslint-plugin-react": "^7.32.2",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"
