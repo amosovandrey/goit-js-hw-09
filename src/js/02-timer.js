@@ -18,7 +18,6 @@ const options = {
       });
     } else {
       startBtn.disabled = false;
-      datetimePicker.disabled = false;
     }
   },
 };
@@ -44,7 +43,6 @@ function startCountdown() {
   startBtn.disabled = true;
   datetimePicker.disabled = true;
   const selectedDate = calendar.parseDate(datetimePicker.value);
-  // let countTime = selectedDate.getTime() - Date.now();
 
   timerID = setInterval(() => {
     let countTime = selectedDate.getTime() - Date.now();
@@ -52,8 +50,10 @@ function startCountdown() {
     updateCountdownValues(countTime);
 
     if (countTime <= 0) {
+      datetimePicker.disabled = false;
       clearInterval(timerID);
       updateCountdownValues(0);
+
       return;
     }
   }, INTERVAL);
